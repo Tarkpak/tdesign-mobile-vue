@@ -13,6 +13,11 @@ export interface TdImageViewerProps {
    */
   closeBtn?: boolean | TNode;
   /**
+   * 是否显示删除操作
+   * @default false
+   */
+  deleteBtn?: boolean;
+  /**
    * 图片数组
    * @default []
    */
@@ -48,11 +53,15 @@ export interface TdImageViewerProps {
    */
   modelValue?: boolean;
   /**
+   * 翻页时回调
+   */
+  onChange?: (index: Number) => void;
+  /**
    * 关闭时触发，事件参数包含触发关闭的来源：关闭按钮、遮罩层、ESC 键
    */
   onClose?: (context: { trigger: 'close-btn' | 'overlay' | 'esc'; e: MouseEvent | KeyboardEvent }) => void;
   /**
-   * 预览图片切换时触发，`context.prev` 切换到上一张图片，`context.next` 切换到下一张图片
+   * 点击删除操作按钮时触发
    */
-  onIndexChange?: (index: number, context: { trigger: 'prev' | 'next' }) => void;
+  onDelete?: (index: Number) => void;
 }

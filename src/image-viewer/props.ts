@@ -13,6 +13,8 @@ export default {
     type: [Boolean, Function] as PropType<TdImageViewerProps['closeBtn']>,
     default: true,
   },
+  /** 是否显示删除操作 */
+  deleteBtn: Boolean,
   /** 图片数组 */
   images: {
     type: Array as PropType<TdImageViewerProps['images']>,
@@ -41,8 +43,10 @@ export default {
   },
   /** 隐藏/显示预览，非受控属性 */
   defaultVisible: Boolean,
+  /** 翻页时回调 */
+  onChange: Function as PropType<TdImageViewerProps['onChange']>,
   /** 关闭时触发，事件参数包含触发关闭的来源：关闭按钮、遮罩层、ESC 键 */
   onClose: Function as PropType<TdImageViewerProps['onClose']>,
-  /** 预览图片切换时触发，`context.prev` 切换到上一张图片，`context.next` 切换到下一张图片 */
-  onIndexChange: Function as PropType<TdImageViewerProps['onIndexChange']>,
+  /** 点击删除操作按钮时触发 */
+  onDelete: Function as PropType<TdImageViewerProps['onDelete']>,
 };
