@@ -13,28 +13,32 @@ export interface TdNavbarProps {
    */
   animation?: boolean;
   /**
-   * 背景
+   * 已废弃。背景
    * @default ''
    */
   background?: string;
+  /**
+   * 左侧胶囊区域
+   */
+  capsule?: TNode;
   /**
    * 是否固定在顶部
    * @default true
    */
   fixed?: boolean;
   /**
-   * 首页图标。值为 true 表示显示默认返回图标，值为 false 表示不显示首页图标，值为其他表示自定义图标
+   * 左侧区域。值为 `string` 表示文本，为其他表示自定义内容
    */
-  homeIcon?: boolean | TNode;
+  left?: string | TNode;
   /**
-   * 左侧图标。值为 true 表示显示默认返回图标，值为 false 表示不显示左侧图标，值为其他表示自定义图标
+   * 是否展示左侧箭头
    * @default false
    */
-  leftIcon?: boolean | TNode;
+  leftArrow?: boolean;
   /**
-   * 右侧图标，可自定义
+   * 右侧区域。值为 `string` 表示文本，为其他表示自定义内容
    */
-  rightIcon?: TNode;
+  right?: string | TNode;
   /**
    * 页面标题
    */
@@ -49,13 +53,11 @@ export interface TdNavbarProps {
    */
   visible?: boolean;
   /**
-   * 点击左侧按钮时触发
+   * 点击左侧区域时触发
    */
-  onLeftClick?: (trigger: NavBarTrigger) => void;
+  onLeftClick?: () => void;
   /**
-   * 点击右侧图标时触发
+   * 点击右侧区域时触发
    */
   onRightClick?: () => void;
 }
-
-export type NavBarTrigger = 'home-icon' | 'left-icon';
