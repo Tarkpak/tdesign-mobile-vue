@@ -8,11 +8,6 @@ import { TdDropdownMenuProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  /** 菜单标题和选项的选中态颜色 */
-  activeColor: {
-    type: String,
-    default: '',
-  },
   /** 是否在点击遮罩层后关闭菜单 */
   closeOnClickOverlay: {
     type: Boolean,
@@ -24,11 +19,11 @@ export default {
     default: 200,
   },
   /** 是否显示遮罩层 */
-  overlay: {
+  showOverlay: {
     type: Boolean,
     default: true,
   },
-  /** 菜单栏 z-index 层级 */
+  /** 组件层级，Web 侧样式默认为 5500，移动端和小程序样式默认为 1500 */
   zIndex: {
     type: Number,
   },
