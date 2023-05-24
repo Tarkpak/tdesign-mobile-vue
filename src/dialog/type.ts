@@ -59,6 +59,7 @@ export interface TdDialogProps {
   title?: string | TNode;
   /**
    * 控制对话框是否显示
+   * @default false
    */
   visible?: boolean;
   /**
@@ -103,19 +104,19 @@ export interface DialogInstance {
   /**
    * 销毁弹框
    */
-  destroy: () => void;
+  destroy?: () => void;
   /**
    * 隐藏弹框
    */
-  hide: () => void;
+  hide?: () => void;
   /**
    * 显示弹框
    */
-  show: () => void;
+  show?: () => void;
   /**
    * 更新弹框内容
    */
-  update: (props: DialogOptions) => void;
+  update?: (props: DialogOptions) => void;
 }
 
 export type DialogEventSource = 'cancel' | 'overlay';
