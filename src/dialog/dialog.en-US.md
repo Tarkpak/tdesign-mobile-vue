@@ -17,7 +17,7 @@ overlayProps | Object | {} | \- | N
 preventScrollThrough | Boolean | true | \- | N
 showOverlay | Boolean | true | \- | N
 title | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-mobile-vue/blob/develop/src/common.ts) | N
-visible | Boolean | - | \- | N
+visible | Boolean | false | \- | N
 width | String / Number | - | \- | N
 zIndex | Number | - | \- | N
 onCancel | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
@@ -40,16 +40,16 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 className | String | - | \- | N
 style | String / Object | - | Typescript：`string \| Styles`。[see more ts definition](https://github.com/Tencent/tdesign-mobile-vue/blob/develop/src/common.ts) | N
-`Omit<DialogProps, 'attach'>` | \- | - | extends `Omit<DialogProps, 'attach'>` | N
+`Omit<DialogProps, 'attach'>` | \- | - | \- | N
 
 ### DialogInstance
 
 name | params | return | description
 -- | -- | -- | --
-destroy | \- | \- | required
-hide | \- | \- | required
-show | \- | \- | required
-update | `(props: DialogOptions)` | \- | required
+destroy | \- | \- | \-
+hide | \- | \- | \-
+show | \- | \- | \-
+update | `(props: DialogOptions)` | \- | \-
 
 ### DialogPlugin
 
@@ -69,8 +69,6 @@ name | params | default | description
 -- | -- | -- | --
 options | \- | - | Typescript：`DialogOptions`
 
-插件返回值：`DialogInstance`
-
 ### DialogPlugin.alert
 
 同时也支持 `this.$dialog.alert`。
@@ -78,22 +76,3 @@ options | \- | - | Typescript：`DialogOptions`
 name | params | default | description
 -- | -- | -- | --
 options | Object | - | Typescript：`Omit<DialogOptions, 'cancelBtn'>`
-
-插件返回值：`DialogInstance`
-
-
-### CSS Variables
-The component provides the following CSS variables, which can be used to customize styles.
-Name | Default Value | Description 
--- | -- | --
---td-border-radius | @radius-extra-large | - 
---td-dialog-body-max-height | 456px | - 
---td-dialog-close-color | @font-gray-3 | - 
---td-dialog-close-font-size | 22px | - 
---td-dialog-content-color | @font-gray-2 | - 
---td-dialog-content-font-size | 16px | - 
---td-dialog-content-line-height | 24px | - 
---td-dialog-title-color | @font-gray-1 | - 
---td-dialog-title-font-size | 18px | - 
---td-dialog-title-line-height | 26px | - 
---td-dialog-width | 311px | - 

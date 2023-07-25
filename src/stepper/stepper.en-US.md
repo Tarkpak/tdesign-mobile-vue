@@ -1,6 +1,7 @@
 :: BASE_DOC ::
 
 ## API
+
 ### Stepper Props
 
 name | type | default | description | required
@@ -17,7 +18,6 @@ value | String / Number | 0 | `v-model` and `v-model:value` is supported | N
 defaultValue | String / Number | 0 | uncontrolled property | N
 onBlur | Function |  | Typescript：`(value: string \| number) => void`<br/> | N
 onChange | Function |  | Typescript：`(value: string \| number) => void`<br/> | N
-onFocus | Function |  | Typescript：`(value: string \| number) => void`<br/> | N
 onOverlimit | Function |  | Typescript：`(type: 'minus' \| 'plus') => void`<br/> | N
 
 ### Stepper Events
@@ -26,16 +26,4 @@ name | params | description
 -- | -- | --
 blur | `(value: string \| number)` | \-
 change | `(value: string \| number)` | \-
-focus | `(value: string \| number)` | \-
 overlimit | `(type: 'minus' \| 'plus')` | \-
-
-
-### CSS Variables
-The component provides the following CSS variables, which can be used to customize styles.
-Name | Default Value | Description 
--- | -- | --
---td-stepper-border-color | @component-border | - 
---td-stepper-border-radius | @radius-small | - 
---td-stepper-input-color | @font-gray-1 | - 
---td-stepper-input-disabled-bg | @bg-color-component-disabled | - 
---td-stepper-input-disabled-color | @font-gray-4 | - 

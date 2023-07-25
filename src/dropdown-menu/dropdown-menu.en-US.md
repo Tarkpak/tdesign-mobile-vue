@@ -6,7 +6,6 @@
 name | type | default | description | required
 -- | -- | -- | -- | --
 closeOnClickOverlay | Boolean | true | \- | N
-direction | String | down | options：down/up | N
 duration | String / Number | 200 | \- | N
 showOverlay | Boolean | true | \- | N
 zIndex | Number | 11600 | \- | N
@@ -21,6 +20,7 @@ label | String | - | \- | N
 multiple | Boolean | false | \- | N
 options | Array | [] | Typescript：`Array<DropdownOption>` `interface DropdownOption { label: string; disabled: boolean; value: DropdownValue; }`。[see more ts definition](https://github.com/Tencent/tdesign-mobile-vue/tree/develop/src/dropdown-menu/type.ts) | N
 optionsColumns | String / Number | 1 | \- | N
+optionsLayout | String | columns | `deprecated` | N
 value | String / Number | undefined | `v-model` and `v-model:value` is supported。Typescript：`DropdownValue ` `type DropdownValue = string \| number;`。[see more ts definition](https://github.com/Tencent/tdesign-mobile-vue/tree/develop/src/dropdown-menu/type.ts) | N
 defaultValue | String / Number | undefined | uncontrolled property。Typescript：`DropdownValue ` `type DropdownValue = string \| number;`。[see more ts definition](https://github.com/Tencent/tdesign-mobile-vue/tree/develop/src/dropdown-menu/type.ts) | N
 onChange | Function |  | Typescript：`(value: DropdownValue) => void`<br/> | N
@@ -34,17 +34,3 @@ name | params | description
 change | `(value: DropdownValue)` | \-
 confirm | `(value: DropdownValue)` | \-
 reset | `(value: DropdownValue)` | \-
-
-
-### CSS Variables
-The component provides the following CSS variables, which can be used to customize styles.
-Name | Default Value | Description 
--- | -- | --
---td-dropdown-body-max-height | 280px | - 
---td-dropdown-menu-bg-color | @bg-color-container | - 
---td-dropdown-menu-active-colorm | @brand-color | - 
---td-dropdown-menu-bg-colorm | @bg-color-container | - 
---td-dropdown-menu-colorm | @font-gray-1 | - 
---td-dropdown-menu-disabled-colorm | @font-gray-4 | - 
---td-dropdown-menu-font-sizem | 14px | - 
---td-dropdown-menu-icon-sizem | 24px | - 
