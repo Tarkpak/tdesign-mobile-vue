@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div class="demo-count-down">
+  <!-- <div class="demo-count-down">
     <text class="demo-count-down-desc"> 带毫秒 </text>
     <div class="demo-count-down-content">
       <t-count-down :time="time" millisecond />
@@ -39,10 +39,12 @@
     <div class="demo-count-down-content">
       <t-count-down class="custom" :time="time" split-with-unit />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 interface TimeData {
   days: number;
   hours: number;
@@ -51,7 +53,12 @@ interface TimeData {
   milliseconds: number;
 }
 
-const time = 96 * 60 * 1000;
+const time = ref(0);
+
+setTimeout(() => {
+  console.log('===setTimeout===');
+  time.value = 96 * 60 * 1000;
+}, 3000);
 </script>
 
 <style lang="less">

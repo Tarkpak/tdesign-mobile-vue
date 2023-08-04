@@ -73,4 +73,5 @@ export interface TdUseCountDown {
   showTimes: TdUseCountDownShowTimes;
   pause?: () => void;
   resume?: () => void;
+  reset?: (value: number) => void;
 }

@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, getCurrentInstance } from 'vue';
+import { computed, defineComponent, getCurrentInstance, watch } from 'vue';
 import config from '../config';
 import props from './props';
 import { useCountDown } from '../shared/useCountDown';
@@ -27,9 +27,15 @@ export default defineComponent({
   components: { TNode },
   props,
   setup(props) {
-    const { time, showTimes } = useCountDown(props);
+    const { time, showTimes, pause, resume, reset } = useCountDown(props);
     const internalInstance = getCurrentInstance();
     const countDownContent = computed(() => renderTNode(internalInstance, 'content'));
+
+    const resetTime = () => {
+      reset?.(Number(props.time));
+    };
+
+    watch(() => props.time, resetTime, { immediate: true });
 
     return {
       name,

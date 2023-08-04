@@ -5,9 +5,9 @@
     <tdesign-demo-block title="01 组件类型" :padding="true">
       <baseDemo />
     </tdesign-demo-block>
-    <tdesign-demo-block title="02 组件尺寸" summary="倒计时 large/medium/small 尺寸" :padding="true">
+    <!-- <tdesign-demo-block title="02 组件尺寸" summary="倒计时 large/medium/small 尺寸" :padding="true">
       <sizeDemo />
-    </tdesign-demo-block>
+    </tdesign-demo-block> -->
   </div>
 </template>
 

@@ -38,8 +38,14 @@ export function useCountDown(props: TdUseCountDownProps): TdUseCountDown {
     { immediate: autoStart },
   );
 
+  const reset = (totalTime = Number(props.time)) => {
+    console.log('==reset====', totalTime);
+    pause?.();
+    count.value = totalTime;
+  };
+
   /**
    * return
    */
-  return { time: count, showTimes, pause, resume };
+  return { time: count, showTimes, pause, resume, reset };
 }
